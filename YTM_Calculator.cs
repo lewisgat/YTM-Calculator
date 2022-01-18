@@ -56,7 +56,6 @@ namespace YTM_Calculator
             foreach (Cashflow c in Flows)
             {
                 DateTime enddate = c.paymentDate;
-                //double years = (enddate.Date - PricingDate.Date).Days / 365;   //assuming 365 days a year each year in order to get years until this coupon/principle payment
                 price += (c.PrincipleAmount + c.CouponAmount) / Math.Pow(1 + r, period);
                 period++;
             }
@@ -72,7 +71,6 @@ namespace YTM_Calculator
             int period = 1; 
             foreach (Cashflow c in Flows)
             { DateTime enddate = c.paymentDate;
-                // double years = (enddate.Date - PricingDate.Date).Days/365.0;   //assuming 365 days a year each year in order to get the number of years until this coupon/principle payment
                 p -= (c.PrincipleAmount + c.CouponAmount) / Math.Pow(1+r, period);
                 period++ ;
 
@@ -90,7 +88,6 @@ namespace YTM_Calculator
             {
                 DateTime enddate = c.paymentDate;
 
-                //double years = (enddate.Date - PricingDate.Date).Days / 365.0;   //assuming 365 days a year in order to get years until this coupon/principle payment
                 s += period * (c.PrincipleAmount + c.CouponAmount) / Math.Pow(1 + r, period - 1);
                 period++;
             }
