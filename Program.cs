@@ -128,29 +128,29 @@ namespace YTM_Calculator
             cashflows.Add_Flow(new DateTime(2027, 11, 20), 0, 22750);
             cashflows.Add_Flow(new DateTime(2028, 05, 20), 1000000, 22750);
 
-            //Question A: YTM for a bond priced at 102% of par as of 27/03/2021
+            //YTM for a bond priced at 102% of par as of 27/03/2021
             double ParValue1 = 1.02;
             double[] rA = cashflows.YTM_Calculator(new DateTime(2021, 03, 27), ParValue1);
             Console.WriteLine("The YTM was calculated to be " + rA[0]*100 + "%.\nThis took the Newton-Raphson algorithm " + rA[1] +" iterations to compute.");
             Console.WriteLine("\n");
 
-            //Question B: YTM for a bond priced at 98% of par as of 27/03/2021
+            //YTM for a bond priced at 98% of par as of 27/03/2021
             double ParValue2 = 0.98;
             double[] rB = cashflows.YTM_Calculator(new DateTime(2021, 03, 27), ParValue2);
             Console.WriteLine("The YTM was calculated to be " + rB[0] * 100 + "%.\nThis took the Newton-Raphson algorithm " + rB[1] + " iterations to compute.");
             Console.WriteLine("\n");
 
-            //Question C: YTM for a bond priced 102% of par as of 07/04/2021
+            //YTM for a bond priced 102% of par as of 07/04/2021
             double[] rC = cashflows.YTM_Calculator(new DateTime(2021, 04, 07), ParValue1);
             Console.WriteLine("The YTM was calculated to be " + rC[0] * 100 + "%.\nThis took the Newton-Raphson algorithm " + rC[1] + " iterations to compute.");
             Console.WriteLine("\n");
 
-            //Question D: Calculating the bond price at 4.22% yield as of 27/03/2021
+            //Calculating the bond price at 4.22% yield as of 27/03/2021
             double bp = cashflows.Bond_Price(new DateTime(2021, 03, 27), 0.0422);
             Console.WriteLine("The Bond Price is " + bp + "% of par");
             Console.WriteLine("\n");
 
-            //Question E: Additional Cashflows are added and the calculations above are repeated
+            //Additional Cashflows are added and the calculations above are repeated
             Cashflows cashflow2 = cashflows;
             cashflow2.Add_Flow(new DateTime(2021, 05, 20), 0, 22750);
             cashflow2.Add_Flow(new DateTime(2021, 11, 20), 0, 22750);
