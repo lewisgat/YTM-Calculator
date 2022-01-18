@@ -1,3 +1,3 @@
 # YTM-Calculator
 
-This project was my first using C#. Using an inputted amount of debt, dates and amounts of coupon payment and final redemption date it calculates the Yield to Maturity using Newton-Raphson. 
+This project was my first using C#. The model takes nominal/par amount debt (amount issued originally), coupon payments and can calculate the Yield to Maturity (YTM) given the bond price as a percentage of par, or the bond price given the YTM.
